@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+            crossorigin="anonymous"
+    />
+</head>
+<body>
+<table>
+    <form th:action="@{/kiem-tra} " th:object="${request}" method="post">
+        <tr>
+            <td>Nhập số nút nam:</td>
+            <td>
+                <input type="number" th:field="*{nutNam}"/>
+            </td>
+            <td th:if="${#fields.hasErrors('nutNam')}" th:errors="*{nutNam}"  style="color: red">
+                Error</td>
+        </tr>
+        <tr>
+            <td>Nhập số nút nữ:</td>
+            <td>
+                <input type="number" th:field="*{nutNu}"/>
+            </td>
+            <td th:if="${#fields.hasErrors('nutNu')}" th:errors="*{nutNu}"  style="color: red">
+                Error</td>
+        </tr>
+        <tr>
+            <td>Nhập tổng cạnh hình thành:</td>
+            <td>
+                <input type="number" th:field="*{tongCanh}"/>
+            </td>
+            <td th:if="${#fields.hasErrors('tongCanh')}" th:errors="*{tongCanh}"  style="color: red">
+                Error</td>
+        </tr>
+        <tr>
+            <td>Nhập số cạnh chéo:</td>
+            <td>
+                <input type="number" th:field="*{canhCheo}"/>
+            </td>
+            <td th:if="${#fields.hasErrors('canhCheo')}" th:errors="*{canhCheo}" style="color: red">
+                Error</td>
+        </tr>
+        <tr>
+            <td><br/></td>
+            <td><br/></td>
+            <td><br/></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="reset">Reset</button>
+            </td>
+            <td>
+                <button type="submit">Kiểm tra</button>
+            </td>
+            <td><br/></td>
+        </tr>
+        <tr>
+            <td><br/></td>
+            <td><br/></td>
+            <td><br/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="button">Xuất file</button>
+            </td>
+            <td><br/></td>
+        </tr>
+        <tr>
+            <td><br/></td>
+            <td><br/></td>
+            <td><br/></td>
+        </tr>
+        <tr>
+            <td>Kết quả</td>
+            <td><input type="text" th:field="*{ketQua}" disabled></td>
+        </tr>
+        <td><br/></td>
+    </form>
+</table>
+</body>
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"
+></script>
+</html>
