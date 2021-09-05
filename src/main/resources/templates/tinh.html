@@ -20,24 +20,27 @@
             <td>
                 <input type="number" th:field="*{nutNam}"/>
             </td>
-            <td th:if="${#fields.hasErrors('nutNam')}" th:errors="*{nutNam}"  style="color: red">
-                Error</td>
+            <td th:if="${#fields.hasErrors('nutNam')}" th:errors="*{nutNam}" style="color: red">
+                Error
+            </td>
         </tr>
         <tr>
             <td>Nhập số nút nữ:</td>
             <td>
                 <input type="number" th:field="*{nutNu}"/>
             </td>
-            <td th:if="${#fields.hasErrors('nutNu')}" th:errors="*{nutNu}"  style="color: red">
-                Error</td>
+            <td th:if="${#fields.hasErrors('nutNu')}" th:errors="*{nutNu}" style="color: red">
+                Error
+            </td>
         </tr>
         <tr>
             <td>Nhập tổng cạnh hình thành:</td>
             <td>
                 <input type="number" th:field="*{tongCanh}"/>
             </td>
-            <td th:if="${#fields.hasErrors('tongCanh')}" th:errors="*{tongCanh}"  style="color: red">
-                Error</td>
+            <td th:if="${#fields.hasErrors('tongCanh')}" th:errors="*{tongCanh}" style="color: red">
+                Error
+            </td>
         </tr>
         <tr>
             <td>Nhập số cạnh chéo:</td>
@@ -45,7 +48,8 @@
                 <input type="number" th:field="*{canhCheo}"/>
             </td>
             <td th:if="${#fields.hasErrors('canhCheo')}" th:errors="*{canhCheo}" style="color: red">
-                Error</td>
+                Error
+            </td>
         </tr>
         <tr>
             <td><br/></td>
@@ -67,20 +71,29 @@
             <td><br/></td>
         </tr>
         <tr>
-            <td></td>
-            <td>
-                <button type="button">Xuất file</button>
+            <td><br/></td>
+            <td><br/></td>
+            <td><br/></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <table>
+                    <tr>
+                        <th width="100px">p</th>
+                        <th width="100px">q</th>
+                        <th width="100px">c</th>
+                        <th width="100px">2pq</th>
+                        <th width="250px">Kết quả</th>
+                    </tr>
+                    <tr th:each="re : ${listRequest}">
+                        <td th:text="${re.p}"></td>
+                        <td th:text="${re.q}"></td>
+                        <td th:text="${re.c}"></td>
+                        <td th:text="${re.qp}"></td>
+                        <td th:text="${re.ketQua}"></td>
+                    </tr>
+                </table>
             </td>
-            <td><br/></td>
-        </tr>
-        <tr>
-            <td><br/></td>
-            <td><br/></td>
-            <td><br/></td>
-        </tr>
-        <tr>
-            <td>Kết quả</td>
-            <td><input type="text" th:field="*{ketQua}" disabled></td>
         </tr>
         <td><br/></td>
     </form>

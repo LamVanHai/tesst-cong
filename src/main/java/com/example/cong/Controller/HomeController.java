@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
@@ -20,6 +22,8 @@ public class HomeController {
     public String home(Model model){
         Request request=new Request();
         model.addAttribute("request",request);
+        List<Request> requests=new ArrayList<>();
+        model.addAttribute("listRequest",requests);
         return "tinh";
     }
 
@@ -28,8 +32,9 @@ public class HomeController {
         if (bindingResult.hasErrors()){//Nếu có lỗi valid thì return luôn
             return "tinh";
         }
-        RequestService.ketQua(request);
+        List<Request> requests=RequestService.ketQua(request);
         model.addAttribute("request", request);
+        model.addAttribute("listRequest",requests);
         return "tinh";
     }
 

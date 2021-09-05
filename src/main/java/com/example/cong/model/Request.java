@@ -22,6 +22,14 @@ public class Request {
     @Min(value = 0,message = "phải lớn hơn hoặc = 0")
     private int canhCheo;
 
+    private double p;
+
+    private double q;
+
+    private double c;
+
+    private double qp;
+
     private int tongNut;
 
     private String ketQua;
