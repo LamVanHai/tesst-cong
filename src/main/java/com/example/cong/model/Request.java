@@ -31,6 +31,8 @@ public class Request {
     private double qp;
 
     private int tongNut;
+    
+    private int hai;
 
     private String address;
 
