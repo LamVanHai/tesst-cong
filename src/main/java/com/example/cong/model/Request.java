@@ -32,6 +32,8 @@ public class Request {
 
     private int tongNut;
 
+    private String address;
+
     private String ketQua;
 
 
